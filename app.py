@@ -101,9 +101,16 @@ def predict_and_explain(img_dict):
     
     return result_text, superimposed_img
 
+custom_css = """
+.gradio-container { max-width: 900px !important; }
+h1 { text-align: center; background: -webkit-linear-gradient(45deg, #00C9FF, #92FE9D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3em !important; margin-bottom: 0 !important; }
+.subtitle { text-align: center; font-size: 1.2em; color: #8b949e; margin-bottom: 30px; }
+"""
+theme = gr.themes.Monochrome(primary_hue="emerald", neutral_hue="slate")
+
 with gr.Blocks(title="Handwritten Digit Recognition") as demo:
-    gr.Markdown("# ✍️ Handwritten Digit Recognition (with Explainable AI)")
-    gr.Markdown("Draw a digit (0-9) in the canvas below. The CNN model will predict it and use **Grad-CAM** to show exactly where it was looking to make that decision.")
+    gr.Markdown("# ✍️ Character Recognition AI")
+    gr.Markdown("<p class='subtitle'>Draw a digit (0-9) below. The Deep Learning CNN will predict it and generate a <b>Grad-CAM Heatmap</b> to show its exact neural activations!</p>")
     
     with gr.Row():
         with gr.Column():
@@ -120,4 +127,4 @@ if __name__ == "__main__":
     if model is None:
         print("Warning: Model not found. The app will launch but cannot make predictions until you run train_model.py")
     print("Launching Interactive Drawing App...")
-    demo.launch()
+    demo.launch(theme=theme, css=custom_css)
