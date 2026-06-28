@@ -1,6 +1,18 @@
-# Task 3: Handwritten Character Recognition
+---
+title: CodeAlpha Character Recognition
+emoji: 📝
+colorFrom: yellow
+colorTo: red
+sdk: gradio
+app_file: app.py
+pinned: false
+---
 
-This folder contains the solution for the Handwritten Character Recognition task.
+# Task 3: Character Recognition from Images
+
+🎉 **Live Interactive Demo:** [CodeAlpha Character Recognition App on Hugging Face](https://huggingface.co/spaces/rexrevanth/CodeAlpha-Character-Recognition)
+
+This folder contains the solution for the Character Recognition from Images task.
 
 ## Objective
 Identify handwritten characters or alphabets using deep learning.
